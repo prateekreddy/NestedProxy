@@ -6,7 +6,7 @@ import 'hardhat-typechain';
 import { task } from "hardhat/config";
 import { HardhatUserConfig } from 'hardhat/types';
 
-import { privateKeys } from "./wallet/keys";
+import { privateKeys, kovanPrivateKeys } from "./wallet/keys";
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
@@ -42,9 +42,14 @@ const config: HardhatUserConfig = {
         localhost: {
             url: 'http://127.0.0.1:8545',
             timeout: 100000,
-            accounts: process.env.PRIVATE_KEYS ? process.env.PRIVATE_KEYS.split(',') : [],
+            accounts: { mnemonic: "myth like bonus scare over problem client lizard pioneer submit female collect" },
             loggingEnabled: process.env.LOGGING && process.env.LOGGING.toLowerCase() === 'true' ? true : false,
         },
+        kovan: {
+            chainId: 42,
+            url: "https://eth-kovan.alchemyapi.io/v2/snGskhAXMQaRLnJaxbcfOL7U5_bSZl_Y",
+            accounts: kovanPrivateKeys
+        }
     },
     solidity: {
         version: '0.8.2',

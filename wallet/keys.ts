@@ -1,4 +1,7 @@
 const temp = [
+    '4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d',
+    '6cbed15c793ce57650b9877cf6fa156fbef513c4e6134f022a85b1ffdd59b2a1',
+    '6370fd033278c143179d81c5526140625662b8daa446c22ee2d73db3707e620c',
     '6029243356ca0bbc9a9af7daa15ea9c3cb2e113157d3fe7b70047bdf2d69bdb3',
     '9178dc78ec190be46f91b8f01da07e3384e38850189bfd5768b47da7be1951d9',
     '6f59567a7059244b595bcce9646cd6c7bef949500f42aa1da6d898a9b4f31f10',
@@ -26,4 +29,10 @@ const temp = [
 
 let privateKeys = temp.map((key) => `0x${key}`);
 
-export { privateKeys };
+let kovanPrivateKeys = [
+    '6029243356ca0bbc9a9af7daa15ea9c3cb2e113157d3fe7b70047bdf2d69bdb3',
+    '9178dc78ec190be46f91b8f01da07e3384e38850189bfd5768b47da7be1951d9',
+    '6f59567a7059244b595bcce9646cd6c7bef949500f42aa1da6d898a9b4f31f10',
+];
+
+export { privateKeys, kovanPrivateKeys };
